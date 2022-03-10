@@ -7,3 +7,6 @@ resource "aws_vpc" "mtc_vpc" {
     Name = "mtc_vpc"
   }
 }
+
+
+#test
