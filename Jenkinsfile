@@ -1,11 +1,14 @@
 
 pipeline {
   agent any
+  environment {
+  TF_IN_AUTOMATION = 'true'
+  TF_IN_AUTOMATION = credentials('tf-creds')
+  }
   stages {
     stage('Init') {
       steps {
         sh 'ls'
-        sh 'export TF_IN_AUTOMATION=true'
         sh 'terraform init -no-color'
       }
     }
